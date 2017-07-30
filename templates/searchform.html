@@ -1,0 +1,12 @@
+
+{% block content %}
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for medicine in UserFilter.qs%}
+    <li>{{ medicine.medicine_name }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

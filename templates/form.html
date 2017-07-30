@@ -1,0 +1,40 @@
+{% load static %}
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'static.css'%}">
+</head>
+<body>
+<style>
+h1{font-family: Lobster, Monospaced;}
+.imgs{
+    width: 200px;
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 20%;
+}
+</style>
+<form action="save" method="post">
+{% csrf_token %}
+<table>
+<tr>
+    <td>
+        <h1> Medicine Data</h1>
+        <img class = "imgs" src = "{% static "pills.jpg"%}">
+       <h3>Medicine Name: <input type="text" name = "medicine_name" id ="medicine_name" value=""  > </h3>
+        <h3>Medicine Dosage ml: <input type="text" name = "medicine_dosage" id = "medicine_dosage" value="" ></h3>
+        <input type="submit" name="submit">
+
+
+    </td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>
